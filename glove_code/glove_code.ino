@@ -48,12 +48,45 @@ void loop() {
 
   
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  //BUTTON A
   if (digitalRead(buttonPinA) == HIGH) {
     // turn LED on:
     
     Serial.println("A"); 
     delay(300);
-  } 
+  }
+
+   //BUTTON E
+   if (digitalRead(buttonPinE) == HIGH) {
+    // turn LED on:
+    
+    Serial.println("E"); 
+    delay(300);
+  }
+
+   //BUTTON I
+   if (digitalRead(buttonPinI) == HIGH) {
+    // turn LED on:
+    
+    Serial.println("I"); 
+    delay(300);
+  }
+
+   //BUTTON O
+   if (digitalRead(buttonPinO) == HIGH) {
+    // turn LED on:
+    
+    Serial.println("O"); 
+    delay(300);
+  }
+
+   //BUTTON U
+   if (digitalRead(buttonPinU) == HIGH) {
+    // turn LED on:
+    
+    Serial.println("U"); 
+    delay(300);
+  }
   
   if (digitalRead(buttonPinD)==HIGH) {
    Dcount++;
@@ -72,9 +105,17 @@ void loop() {
 
    if(Lpressed){
     Serial.println("L");
+    
+    
    }else{
     Serial.println("D");
-   }
     
+   }
+    Lpressed = false;
+    Dcount=0;
   }
+
+  
+
+  
 }
