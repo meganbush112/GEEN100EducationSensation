@@ -18,7 +18,9 @@ const int buttonPinU = A1;
 const int buttonPinW = A2;
 const int buttonPinY = A3;
 int Dcount = 0;
+int Bcount = 0;
 bool Lpressed = false;
+bool Bpressed = false;
 
 // variables will change:
 
@@ -88,6 +90,7 @@ void loop() {
     delay(300);
   }
   
+    //BUTTON D and L
   if (digitalRead(buttonPinD)==HIGH) {
    Dcount++;
    for(int i = 0; i < 10; i++){
@@ -115,7 +118,24 @@ void loop() {
     Dcount=0;
   }
 
-  
+  //BUTTON B
+  if (digitalRead(buttonPinB)==HIGH) {
+   Bcount++;
+   for(int i = 0; i < 10; i++){
+    if (digitalRead(buttonPinB)==HIGH) {
+      Bcount++;
+    }
+    delay (200);
+    
+   if(Bcount >= 3){
+    Serial.println("B"); 
+   }
+    Bcount=0;
+    
+   }
+
+    
+  }//End Loop Method
 
   
-}
+}//End of Program
