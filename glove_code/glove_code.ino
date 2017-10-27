@@ -66,7 +66,7 @@ void loop() {
    for(int i = 0; i < 5; i++){
    if (Dcount > 2 && digitalRead (buttonPinL)== HIGH){
     Lpressed=true;
-     
+     delay(200);
    }
    }
 
