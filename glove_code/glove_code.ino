@@ -19,8 +19,12 @@ const int buttonPinW = A2;
 const int buttonPinY = A3;
 int Dcount = 0;
 int Bcount = 0;
+int Gcount = 0;
+int Hcount = 0;
+int Scount = 0;
+int Ycount = 0;
 bool Lpressed = false;
-bool Bpressed = false;
+
 
 // variables will change:
 
@@ -89,6 +93,40 @@ void loop() {
     Serial.println("U"); 
     delay(300);
   }
+
+  //BUTTON M
+   if (digitalRead(buttonPinM) == HIGH) {
+    // turn LED on:
+    
+    Serial.println("M"); 
+    delay(300);
+  }
+
+  //BUTTON N
+   if (digitalRead(buttonPinN) == HIGH) {
+    // turn LED on:
+    
+    Serial.println("N"); 
+    delay(300);
+  }
+
+
+  //BUTTON C
+   if (digitalRead(buttonPinC) == HIGH) {
+    // turn LED on:
+    
+    Serial.println("C"); 
+    delay(300);
+  }
+
+  //BUTTON W
+   if (digitalRead(buttonPinW) == HIGH) {
+    // turn LED on:
+    
+    Serial.println("W"); 
+    delay(300);
+  }
+  
   
     //BUTTON D and L
   if (digitalRead(buttonPinD)==HIGH) {
@@ -133,9 +171,77 @@ void loop() {
     Bcount=0;
     
    }
-
-    
-  }//End Loop Method
-
+  }
   
-}//End of Program
+   //BUTTON G
+  if (digitalRead(buttonPinG)==HIGH) {
+   Gcount++;
+   for(int i = 0; i < 10; i++){
+    if (digitalRead(buttonPinG)==HIGH) {
+      Gcount++;
+    }
+    delay (200);
+    
+   if(Gcount >= 3){
+    Serial.println("G"); 
+   }
+    Gcount=0;
+    
+   }
+  }
+
+
+  //BUTTON H
+  if (digitalRead(buttonPinH)==HIGH) {
+   Hcount++;
+   for(int i = 0; i < 10; i++){
+    if (digitalRead(buttonPinH)==HIGH) {
+      Hcount++;
+    }
+    delay (200);
+    
+   if(Hcount >= 3){
+    Serial.println("H"); 
+   }
+    Hcount=0;
+    
+   }
+  }
+
+  //BUTTON S
+  if (digitalRead(buttonPinS)==HIGH) {
+   Scount++;
+   for(int i = 0; i < 10; i++){
+    if (digitalRead(buttonPinS)==HIGH) {
+      Scount++;
+    }
+    delay (200);
+    
+   if(Scount >= 3){
+    Serial.println("S"); 
+   }
+    Scount=0;
+    
+   }
+  }
+
+  //BUTTON Y
+  if (digitalRead(buttonPinY)==HIGH) {
+   Ycount++;
+   for(int i = 0; i < 10; i++){
+    if (digitalRead(buttonPinY)==HIGH) {
+      Ycount++;
+    }
+    delay (200);
+    
+   if(Ycount >= 3){
+    Serial.println("Y"); 
+   }
+    Ycount=0;
+    
+   }
+  }
+  
+  
+  } //End Loop Method
+
